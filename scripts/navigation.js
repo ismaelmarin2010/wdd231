@@ -16,7 +16,7 @@ document.querySelector("#currentyear").textContent = currentYear;
 const lastModified = new Date(document.lastModified);
 document.querySelector("#lastModified").textContent = lastModified;
 
-// Courses
+// List of courses I have taken
 const courses = [
     {
         subject: 'CSE',
@@ -28,7 +28,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -41,7 +41,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -53,7 +53,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -65,7 +65,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -79,7 +79,7 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -96,3 +96,59 @@ const courses = [
         completed: false
     }
 ]
+
+// Working with the HTML elements
+const coursesElement = document.querySelector("#courses");
+const totalCreditsElement = document.querySelector("#total-credits");
+
+// Display courses funtion
+function displayCourses(courseList) {
+
+    // Clear previous exewctions
+    coursesElement.innerHTML = "";
+
+    // Display each course
+    courseList.forEach(course => {
+        const courseCard = document.createElement("div");
+
+        courseCard.classList.add("course-card");
+
+        // Check if course completed is true
+        if (course.completed) {
+            courseCard.classList.add("completed");
+        }
+
+        courseCard.innerHTML = `
+            <h3>${course.subject} ${course.number}</h3>
+            <p>${course.title}</p>
+            <p>${course.credits} Credits</p>
+        `;
+
+        coursesElement.appendChild(courseCard);
+    });
+
+    // Calculate the total credits of displayed courses
+    const totalCredits = courseList.reduce(
+        (total, course) => total + course.credits, 0
+    );
+
+    totalCreditsElement.textContent = `Total Credits: ${totalCredits}`;
+}
+
+// Display all courses when the page loads
+displayCourses(courses);
+
+// Filter buttons
+document.querySelector("#all-courses").addEventListener("click", () => {
+    displayCourses(courses);
+});
+
+document.querySelector("#wdd-courses").addEventListener("click", () => {
+    const wddCourses = courses.filter(course => course.subject === "WDD");
+    displayCourses(wddCourses);
+});
+
+document.querySelector("#cse-courses").addEventListener("click", () => {
+    const cseCourses = courses.filter(course => course.subject === "CSE");
+    displayCourses(cseCourses);
+});
