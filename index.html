@@ -4,19 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Project</title>
     <title>WDD 231 – Web Frontend Development I – Ismael Marin</title>
     <meta name="description"
         content="WDD 231 – Dynamic Web Fundamentals | Ismael Marin | This is the index page for Ismael WDD231 course.">
     <meta name="author" content="Ismael Marin">
-    
-    <!-- Google Font Here -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400&display=swap"
         rel="stylesheet">
-
-    <!-- Styles Sheets Here -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
@@ -38,22 +33,34 @@
     </nav>
 
     <main>
-        <h1>Dedicated Temples</h1>
+        <h1>Home</h1>
+        <section class="section" id="about-me">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia minus tempore dignissimos quidem dolorum! Excepturi hic reiciendis, aperiam odit laboriosam neque perspiciatis eaque fugiat amet corrupti impedit earum dolor a.</p>
+        </section>
+        <section class="section" id="student-photo">
+            <h2>Student Photo</h2>
+            <img src="images/ismael.jpg">
+        </section>
+        <section class="section" id="certificate-courses">
+            <h2>Web Certificate Courses</h2>
+            
+        </section>
     </main>
 
     <footer>
         <div class="social">
             <a href="https://www.whatsapp.com/" target="_blank"><img src="images/whatsapp.svg" alt="whatsapp" width="16"
                     height="16"></a>
-            <a href="https://github.com/" target="_blank"><img src="images/github.svg" alt="GitHub" width="16"
-                    height="16"></a>
-            <a href="https://linkedin.com/" target="_blank"><img src="images/linkedin.svg" alt="Linkedin" width="16"
-                    height="16"></a>
+            <a href="https://github.com/ismaelmarin2010/wdd231" target="_blank"><img src="images/github.svg"
+                    alt="GitHub" width="16" height="16"></a>
+            <a href="https://linkedin.com/in/iamarin" target="_blank"><img src="images/linkedin.svg" alt="Linkedin"
+                    width="16" height="16"></a>
             <a href="https://x.com/" target="_blank"><img src="images/twitter-x.svg" alt="X twitter" width="16"
                     height="16"></a>
         </div>
-        <p>copyright</p>
-        <p>Last modified</p>
+        <p>&copy; <span id="currentyear"></span> - Ismael Marin - Cordoba, Argentina</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
     <script src="scripts/navigation.js"></script>
 
