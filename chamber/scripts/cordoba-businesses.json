@@ -1,0 +1,76 @@
+{
+  "companies": [
+    {
+      "businessName": "TodoMaq",
+      "businessTagLine": "Professional tools, equipment and expert support for industry, commerce and home.",
+      "email": "ventas@todomaq.com.ar",
+      "phone": "+54 351 554-0800",
+      "url": "https://www.todomaq.com.ar/",
+      "img": "https://www.todomaq.com.ar/web/image/12081-cee21bd1/4.webp"
+    },
+    {
+      "businessName": "Compu Córdoba",
+      "businessTagLine": "Computers, gaming PCs, notebooks and technology solutions in Córdoba.",
+      "email": "info@compucordoba.com.ar",
+      "phone": "+54 351 421-8377",
+      "url": "https://compucordoba.com.ar/",
+      "img": "https://compucordoba.com.ar/img/Logos/1078-logos-pcarts-logo-3-6055.jpg"
+    },
+    {
+      "businessName": "TotalCompu",
+      "businessTagLine": "Technology solutions for individuals, businesses and public organizations.",
+      "email": null,
+      "phone": "+54 351 425-5592",
+      "url": "https://totalcompu.com.ar/",
+      "img": "https://totalcompu.com.ar/852-home_default/router-wireless-mercusys-ac12-dualband-ac1200.jpg"
+    },
+    {
+      "businessName": "Amérian Córdoba Park Hotel",
+      "businessTagLine": "Comfortable city-center accommodation, dining and event spaces in Córdoba.",
+      "email": "info@amerian.com",
+      "phone": "+54 351 526-6600",
+      "url": "https://www.amerian.com/destinos/amerian-cordoba-park-hotel/",
+      "img": "https://www.amerian.com/wp-content/uploads/2024/03/amerian-cordoba-hotel.jpeg"
+    },
+    {
+      "businessName": "Azur Real Hotel & Spa",
+      "businessTagLine": "A boutique hotel experience combining wellness, local gastronomy and Córdoba heritage.",
+      "email": "info@azurrealhotel.com",
+      "phone": "+54 351 424-7133",
+      "url": "https://azurrealhotel.com/",
+      "img": "https://azurrealhotel.com/wp-content/uploads/2026/07/el-hotel-home-img-01.webp"
+    },
+    {
+      "businessName": "Holiday Inn Córdoba",
+      "businessTagLine": "Hospitality, dining and event facilities for business and leisure stays.",
+      "email": "reservas@hinncordoba.com.ar",
+      "phone": "+54 351 477-9100",
+      "url": "https://hinncordoba.com.ar/",
+      "img": "https://hinncordoba.com.ar/wp-content/uploads/2021/09/Matrimonial-simple-534x303.jpg"
+    },
+    {
+      "businessName": "Neper Select Hotel",
+      "businessTagLine": "A comfortable hotel stay with convenient access to Córdoba's business and leisure destinations.",
+      "email": "reservas@neperhotel.com",
+      "phone": "+54 810 444-6373",
+      "url": "https://www.neperhotel.com/",
+      "img": "https://www.neperhotel.com/assets/cache/uploads/fachada-comprimida/1920x1080/fachada-edificio-neper-select-hotel-cordoba-argentina-1747293458.webp?from=jpg"
+    },
+    {
+      "businessName": "Gran Crisol Hotel",
+      "businessTagLine": "Practical hotel accommodation in Córdoba with a convenient city location.",
+      "email": "info@grancrisol.com.ar",
+      "phone": "+54 351 458-0205",
+      "url": "https://www.grancrisol.com.ar/",
+      "img": "https://www.grancrisol.com.ar/templates/crisolhotel/slideshow/1.jpg"
+    },
+    {
+      "businessName": "Cincorba SRL",
+      "businessTagLine": "Industrial supplies and solutions for businesses, manufacturers and distributors.",
+      "email": "ventas@cincorba.com.ar",
+      "phone": "+54 9 351 560-7791",
+      "url": "https://cincorba.com.ar/",
+      "img": "https://cincorba.com.ar/wp-content/uploads/2026/07/quien-es-cincorba1.png"
+    }
+  ]
+}
