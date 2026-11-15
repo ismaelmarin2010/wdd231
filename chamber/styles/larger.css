@@ -12,6 +12,19 @@
         grid-template-columns: 50px 1fr auto;
     }
 
+    header img {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0 0 .1rem 0;
+    }
+
+    header span {
+        font-size: 1.2rem;
+        color: #3D405B;
+        padding: .8rem 10px;
+    }
+
     .hamburger-class {
         display: none;
     }
@@ -29,28 +42,8 @@
         border: none;
     }
 
-    /* main {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 10px;
-    } */
-
-    main h1 {
-        grid-column: 1 / 3;
-    }
-
-
-
-    #about-me {
-        grid-column: 1 / 2;
-    }
-
-    #student-photo {
-        grid-column: 2 / 3;
-    }
-
-    #certificate-courses {
-        grid-column: 1 / 3;
+    .social {
+        justify-content: center;
     }
 
 
