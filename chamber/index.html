@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordoba's Chamber of Commerce</title>
+    <meta name="description"
+        content="Explore Cordoba's Chamber of Commerce, your connection to local businesses, entrepreneurs, economic development, networking opportunities, and resources to support business growth.">
+    <meta name="author" content="Ismael Marin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+    <meta property="og:title" content="Cordoba's Chamber of Commerce">
+    <meta property="og:description"
+        content="Explore Cordoba's Chamber of Commerce, your connection to local businesses, entrepreneurs, economic development, networking opportunities, and resources to support business growth.">
+    <meta property="og:image"
+        content="https://ismaelmarin2010.github.io/wdd231/chamber/images/cordobas-chamber-of-commerce-og.jpg">
+    <meta property="og:url" content="https://ismaelmarin2010.github.io/wdd231/chamber/directory.html">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Site Logo" width="800" height="800">
+        <span>Cordoba's Chamber of Commerce</span>
+        <button id="hamburger-id" class="hamburger-class"></button>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li class="current"><a href="#">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="index">
+            <img src="images/hero-image-index.jpg" alt="Hero Image of people doing rafting">
+            <h1>Splash White Water Rafting</h1>
+            <article>
+                <h2>Start Your Experience</h2>
+                <p>Join us on stunning rivers where every rapid adds a new chapter to your adventure.</p>
+                <a id="trip-button" href="trips.html">See Our Adventures</a>
+            </article>
+        </div>
+
+        <section class="newsletter">
+            <h2>Stay ahead of the current</h2>
+            <p><strong>Get the latest deals, tips, and river news straight to your inbox!</strong></p>
+            <form>
+
+                <label for="q1" id="l1"><strong>Name</strong></label>
+                <input type="text" name="q1" id="q1" placeholder="John Connor">
+
+
+                <label for="q2" id="l2"><strong>Email</strong></label>
+                <input type="email" name="q2" id="q2" placeholder="turn-off-skynet@resistance.com">
+
+
+                <button type="submit">Subscribe!</button>
+
+            </form>
+
+
+        </section>
+
+        <section class="family">
+            <h2>Adventure for the whole family!</h2>
+            <figure>
+                <img src="images/family1.jpg" alt="Devil’s Teeth Rapids – Río Colorado">
+                <figcaption><strong>Safe for All Ages</strong><br><br>Our expert guides ensure every trip is controlled,
+                    safe, comfortable, and thoughtfully designed for families with
+                    children of all ages.</figcaption>
+            </figure>
+            <figure>
+                <img src="images/family2.jpg" alt="Big Mallard Run – Río Ñireco">
+                <figcaption><strong>Memorable Shared Moments</strong><br><br>Rafting helps families bond through
+                    exciting
+                    experiences, creating lasting memories on every river journey.</figcaption>
+            </figure>
+            <figure>
+                <img src="images/family3.jpg" alt="Half-Day Adventure – Río Limay">
+                <figcaption><strong>Fun Without Complexity</strong><br><br>We provide clear instructions, easy routes,
+                    and
+                    supportive guidance so families enjoy adventure without stress.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+
+        <div>
+            <p><strong>Cordoba's Chamber of Commerce</strong></p>
+            <p>Gral. Paz 79</p>
+            <p>X5000 Córdoba, Argentina</p>
+            <p>info@cordobacoc.com</p>
+            <p>351 422-9950</p>
+        </div>
+
+        <div class="social">
+            <a href="https://www.whatsapp.com/" target="_blank"><img src="images/whatsapp.svg" alt="whatsapp" width="16"
+                    height="16"></a>
+            <a href="https://github.com/ismaelmarin2010/wdd231" target="_blank"><img src="images/github.svg"
+                    alt="GitHub" width="16" height="16"></a>
+            <a href="https://linkedin.com/in/iamarin" target="_blank"><img src="images/linkedin.svg" alt="Linkedin"
+                    width="16" height="16"></a>
+            <a href="https://x.com/" target="_blank"><img src="images/twitter-x.svg" alt="X twitter" width="16"
+                    height="16"></a>
+        </div>
+
+        <div>
+            <p>WDD231 Chamber Project</p>
+            <p>Ismael Marin</p>
+            <p>&copy;<span id="currentyear"></span> Cordoba's Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

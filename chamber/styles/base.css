@@ -1,16 +1,45 @@
-/* SITE WIDE */
+/* SITE SETTINGS START */
 * {
     font-family: "Josefin Sans", sans-serif;
     box-sizing: border-box;
 }
 
-/* HEADER */
+/* Main Variables from Rafting Site*/
+:root {
+    --primary-color: rgba(30, 79, 138, 1);
+    /* Blue for background */
+    --secondary-color: rgba(242, 210, 60);
+    /* Yellow as the safety helmet */
+    --accent1-color: rgba(75, 110, 60, 1);
+    /* Forrest green for ...?*/
+    --accent2-color: rgba(255, 252, 242, 1);
+    /* For text over dark background */
+    --border-color: rgba(0, 0, 0, 1);
+    /* Black for border and some text */
+    --border-shadow-color: rgba(128, 128, 128, 1);
+    /* Gray for shadow */
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* SITE SETTINGS END */
+
+/* HEADER START */
 header {
     display: grid;
     grid-template-columns: 35px auto 44px;
     align-items: end;
     border-bottom: solid 1px #ddd;
     column-gap: 8px;
+    background-color: white;
+
+    /* Make header stick to the top of the page */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 60px;
 }
 
 header img {
@@ -77,6 +106,11 @@ header span {
     background-color: #E07A5F;
 }
 
+
+/* HEADER END */
+
+
+/* GENERAL SETTINGS */
 h1,
 h2,
 p {
@@ -84,11 +118,211 @@ p {
     color: #3D405B;
 }
 
-/* MAIN */
-main h1 {
-    text-align: center;
-    margin: 20px 0;
+
+/* MAIN START */
+main {
+    padding-top: 80px;
+    /* adjust to match your header's real height */
 }
+
+/* Variables from Rafting Site */
+
+.index {
+    position: relative;
+}
+
+.index h1 {
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    padding: 10px 0 10px 0;
+    background-color: rgba(0, 0, 0, 0.18);
+    color: var(--accent2-color);
+    width: 840px;
+}
+
+.index article {
+    position: absolute;
+    text-align: center;
+    color: var(--border-color);
+    margin: 0;
+    top: 125px;
+    left: 480px;
+    /* left: 20px; */
+    padding: 10px 0 10px 0;
+    background-color: rgba(242, 210, 60, 0.7);
+    width: 200px;
+    /* height: 180px; */
+}
+
+
+.index h2,
+.index p {
+    padding: 0 10px 20px 10px;
+}
+
+
+.index img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.newsletter {
+    margin: 50px 0 0 0;
+    /* display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    grid-template-rows: 50px 320px; */
+    justify-content: center;
+    background-color: rgba(30, 79, 138, 0.3);
+    padding: 20px;
+}
+
+.newsletter h2,
+.newsletter p,
+.get-in-contact h2,
+.get-in-contact p {
+    /* grid-column: 1/4; */
+    text-align: center;
+    padding: 5px;
+}
+
+.newsletter form {
+    padding: 15px 10px 10px 10px;
+}
+
+
+.family {
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    padding: 0;
+}
+
+.family h2 {
+    grid-column: 1/4;
+    justify-self: center;
+}
+
+.family img {
+    width: 100%;
+    margin: 0 10px 0 10px;
+    height: auto;
+    border: 1px solid var(--border-color);
+    padding: 2px;
+    box-shadow: 0 0 30px var(--border-shadow-color);
+}
+
+
+.family figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.family figcaption {
+    padding-top: 20px;
+}
+
+#trip-button {
+    display: inline-block;
+    text-decoration: none;
+    width: 150px;
+    justify-self: center;
+}
+
+.trip {
+    margin: 50px 0 0 0;
+    background-color: rgba(30, 79, 138, 0.2);
+    padding: 20px 20px 30px 20px;
+}
+
+.trip h2,
+.trip p,
+.call-to-action h2,
+.call-to-action p {
+    padding: 0 0 10px 0;
+}
+
+.trip p {
+    display: block;
+}
+
+.trip img {
+    width: 180px;
+    height: auto;
+    border: 1px solid black;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+    float: right;
+    margin: 0.0 0 0 1rem;
+}
+
+#trip-img {
+    width: 180px;
+    height: auto;
+    border: 1px solid black;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+    float: left;
+    margin: 0.5rem 1.1rem 0 0;
+}
+
+
+.call-to-action {
+    display: block;
+    margin: 20px 0 0 0;
+    text-align: left;
+    color: var(--border-color);
+    /* top: 125px;
+    left: 480px; */
+    padding: 20px;
+    background-color: rgba(242, 210, 60, 0.7);
+    /* width: 200px; */
+}
+
+.call-to-action h2,
+.call-to-action p {
+    padding: 0;
+}
+
+.call-to-action a {
+    display: block;
+}
+
+#adventure {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 10px;
+    /* border-radius: 5px; */
+    display: block;
+    text-decoration: none;
+    width: 400px;
+    justify-self: center;
+    text-align: center;
+}
+
+#adventure:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    cursor: pointer;
+}
+
+.get-in-contact {
+    width: 100%;
+    margin: 50px 0 0 0;
+    border: 1px solid var(--border-color);
+    justify-content: center;
+    padding: 20px;
+}
+
+
+/* -------------------------- */
 
 /* BUTTONS */
 .course-buttons {
@@ -112,7 +346,6 @@ main h1 {
 .course-buttons button:hover {
     background-color: #E07A5F;
 }
-
 
 /* CARDS AS A GRID */
 #cards {
@@ -205,8 +438,10 @@ main h1 {
     font-size: 0.85rem;
 }
 
+/* MAIN END */
 
-/* FOOTER */
+
+/* FOOTER START */
 
 footer {
     display: grid;
@@ -246,3 +481,5 @@ footer p {
 .social a:hover {
     background-color: #ddd;
 }
+
+/* FOOTER END */
