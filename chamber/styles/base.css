@@ -1,6 +1,4 @@
-/* =====================================
-   SITE SETTINGS
-===================================== */
+/* SITE SETTINGS */
 
 :root {
     /* Main Colors */
@@ -43,9 +41,7 @@ h6 {
 }
 
 
-/* =====================================
-   HEADER
-===================================== */
+/* HEADER */
 
 header {
     display: grid;
@@ -135,9 +131,7 @@ header span {
 }
 
 
-/* =====================================
-   GENERAL SETTINGS
-===================================== */
+/* GENERAL */
 
 h1,
 h2,
@@ -147,9 +141,7 @@ p {
 }
 
 
-/* =====================================
-   MAIN
-===================================== */
+/* MAIN */
 
 main {
     padding-top: 80px;
@@ -217,9 +209,7 @@ main {
 }
 
 
-/* =====================================
-   BUSINESS SPOTLIGHTS
-===================================== */
+/* BUSINESS */
 
 .spotlights {
     margin: 50px 0 0 0;
@@ -283,9 +273,7 @@ main {
 }
 
 
-/* =====================================
-   WEATHER SECTION
-===================================== */
+/* WEATHER */
 
 .weather {
     margin: 50px 0 0 0;
@@ -293,12 +281,15 @@ main {
     padding: 20px;
 }
 
-/* WEATHER GRID */
+/* MOBILE WEATHER */
 #weather-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 15px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+#forecast-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
 }
 
 /* CURRENT WEATHER */
@@ -338,18 +329,12 @@ main {
     color: var(--primary-color);
 }
 
-/* FORECAST CONTAINER */
-#forecast-container {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
 
 /* FORECAST CARDS */
 .forecast-card {
     background-color: var(--white-color);
     padding: 15px;
+    margin-top: 10px;
     border-radius: 8px;
     text-align: center;
 }
@@ -465,9 +450,7 @@ main {
 }
 
 
-/* =====================================
-   COURSE BUTTONS
-===================================== */
+/* COURSE BUTTONS */
 
 .course-buttons {
     display: flex;
@@ -492,9 +475,7 @@ main {
 }
 
 
-/* =====================================
-   DIRECTORY CARDS - GRID VIEW
-===================================== */
+/* DIRECTORY CARDS - GRID */
 
 #cards {
     display: grid;
@@ -548,9 +529,7 @@ main {
 }
 
 
-/* =====================================
-   DIRECTORY CARDS - LIST VIEW
-===================================== */
+/* DIRECTORY CARDS - LIST */
 
 #cards.list {
     display: flex;
@@ -590,9 +569,7 @@ main {
 }
 
 
-/* =====================================
-   FOOTER
-===================================== */
+/* FOOTER */
 
 footer {
     display: grid;
@@ -632,8 +609,3 @@ footer p {
 .social a:hover {
     background-color: var(--medium-gray);
 }
-
-
-/* =====================================
-   END OF BASE CSS
-===================================== */
