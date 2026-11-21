@@ -4,73 +4,91 @@
       "businessName": "Icasa Hogar",
       "businessTagLine": "Home Appliances",
       "email": "info@icasahogar.com.ar",
-      "phone": "351 123-4567",
+      "phone": "3573 42-5222",
+      "address": "Av. Catamarca 598, Villa del Rosario, Córdoba",
       "url": "icasahogar.com.ar",
-      "img": "./images/business-images/icasa-hogar.png"
+      "img": "./images/business-images/icasa-hogar.png",
+      "membershipLevel": "silver"
     },
     {
       "businessName": "Nico Tiendas",
       "businessTagLine": "Fashion Home",
       "email": "info@nicotiendas.com",
-      "phone": "351 123-4567",
+      "phone": "351 627-8787",
+      "address": "Av. Colón 4320, Córdoba",
       "url": "nicotiendas.com",
-      "img": "./images/business-images/nico-tiendas.png"
+      "img": "./images/business-images/nico-tiendas.png",
+      "membershipLevel": "gold"
     },
     {
       "businessName": "Migos",
       "businessTagLine": "Home Technology",
       "email": "contacto@migos.com.ar",
       "phone": "351 246-3876",
+      "address": "Santa Rosa 2, Córdoba",
       "url": "migos.com.ar",
-      "img": "./images/business-images/migos.png"
+      "img": "./images/business-images/migos.png",
+      "membershipLevel": "silver"
     },
     {
       "businessName": "Mundo Los Ángeles",
       "businessTagLine": "Home Textiles",
       "email": "losangelesweb@textilmmsa.com.ar",
       "phone": "351 555-4557",
+      "address": "San Martín 299, Córdoba",
       "url": "mundolosangeles.com.ar",
-      "img": "./images/business-images/mundo-los-angeles.png"
+      "img": "./images/business-images/mundo-los-angeles.png",
+      "membershipLevel": "silver"
     },
     {
       "businessName": "AMA Hogar",
       "businessTagLine": "Home Appliances",
       "email": "ventas@amahogar.com",
-      "phone": "351 393-0511",
+      "phone": "351 421-0268",
+      "address": "Domingo F. Sarmiento 178, Córdoba",
       "url": "amahogar.com.ar",
-      "img": "./images/business-images/ama-hogar.png"
+      "img": "./images/business-images/ama-hogar.png",
+      "membershipLevel": "silver"
     },
     {
       "businessName": "Crossover Comics",
       "businessTagLine": "Collectible Comics",
       "email": "info@crossover-comics.com",
       "phone": "351 613-8083",
+      "address": "Av. General Paz 174, Local 5, Córdoba",
       "url": "crossover-comics.com",
-      "img": "./images/business-images/crossover-comics.png"
+      "img": "./images/business-images/crossover-comics.png",
+      "membershipLevel": "silver"
     },
     {
       "businessName": "Zárate Materiales",
       "businessTagLine": "Building Materials",
       "email": "info@zaratemateriales.com.ar",
       "phone": "351 531-9105",
+      "address": "Av. Monseñor Pablo Cabrera 5030, Córdoba",
       "url": "zaratemateriales.com.ar",
-      "img": "./images/business-images/zarate-materiales.png"
+      "img": "./images/business-images/zarate-materiales.png",
+      "membershipLevel": "gold"
     },
     {
       "businessName": "Amazona",
       "businessTagLine": "Bags Accessories",
       "email": "consultas@amazona.com.ar",
       "phone": "351 520-4340",
+      "address": "Caseros 85, Córdoba",
       "url": "amazona.com.ar",
-      "img": "./images/business-images/amazona.png"
+      "img": "./images/business-images/amazona.png",
+      "membershipLevel": "gold"
     },
     {
       "businessName": "Felicitas Calzados",
       "businessTagLine": "Fashion Footwear",
       "email": "info@felicitascalzados.com.ar",
-      "phone": "351 123-4567",
+      "phone": "351 228-9727",
+      "address": "Aristóbulo del Valle 151, Monte Cristo, Córdoba",
       "url": "felicitascalzados.com.ar",
-      "img": "./images/business-images/felicitas-calzados.png"
+      "img": "./images/business-images/felicitas-calzados.png",
+      "membershipLevel": "bronze"
     }
   ]
 }

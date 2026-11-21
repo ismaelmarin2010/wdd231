@@ -1,4 +1,4 @@
-@media only screen and (min-width: 38rem) {
+@media only screen and (min-width: 40rem) {
 
     header,
     main,
@@ -9,6 +9,7 @@
     }
 
     header {
+        width: 100%;
         grid-template-columns: 50px 1fr auto;
     }
 
@@ -20,7 +21,7 @@
     }
 
     header span {
-        font-size: 1.2rem;
+        font-size: 1.06rem;
         color: #3D405B;
         padding: .8rem 10px;
     }
@@ -46,7 +47,45 @@
         justify-content: center;
     }
 
+    #spotlight-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+    .index h1 {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .index article {
+        position: absolute;
+        top: 100px;
+        left: 40px;
+        width: 350px;
+        margin: 0;
+    }
+
+    .events {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .events h2,
+    .events>p {
+        grid-column: 1 / -1;
+    }
+
+    .events article {
+        margin: 0;
+    }
+
+    .weather {
+        margin-top: 30px;
+    }
+
+    #spotlight-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
 
 }

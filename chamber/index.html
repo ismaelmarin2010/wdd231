@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cordoba's Chamber of Commerce</title>
+    <title>Cordoba City Chamber of Commerce</title>
     <meta name="description"
-        content="Explore Cordoba's Chamber of Commerce, your connection to local businesses, entrepreneurs, economic development, networking opportunities, and resources to support business growth.">
+        content="Explore Cordoba City Chamber of Commerce, your connection to local businesses, entrepreneurs, economic development, networking opportunities, and resources to support business growth.">
     <meta name="author" content="Ismael Marin">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +17,13 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
-    <meta property="og:title" content="Cordoba's Chamber of Commerce">
+    <meta property="og:title" content="Cordoba City Chamber of Commerce">
     <meta property="og:description"
-        content="Explore Cordoba's Chamber of Commerce, your connection to local businesses, entrepreneurs, economic development, networking opportunities, and resources to support business growth.">
+        content="Explore Córdoba City Chamber of Commerce, your connection to local businesses, entrepreneurs, economic development, networking opportunities, and resources to support business growth.">
     <meta property="og:image"
         content="https://ismaelmarin2010.github.io/wdd231/chamber/images/cordobas-chamber-of-commerce-og.jpg">
     <meta property="og:url" content="https://ismaelmarin2010.github.io/wdd231/chamber/directory.html">
@@ -31,7 +32,7 @@
 <body>
     <header>
         <img src="images/logo.svg" alt="Site Logo" width="800" height="800">
-        <span>Cordoba's Chamber of Commerce</span>
+        <span>Córdoba Chamber of Commerce</span>
         <button id="hamburger-id" class="hamburger-class"></button>
         <nav id="nav-bar" class="navigation">
             <ul>
@@ -45,62 +46,91 @@
 
     <main>
         <div class="index">
-            <img src="images/hero-image-index.jpg" alt="Hero Image of people doing rafting">
-            <h1>Splash White Water Rafting</h1>
+            <img src="images/hero-image-index.jpg" alt="View of Córdoba city, Argentina">
+
+            <h1>Connecting Businesses. Building Opportunities.</h1>
+
             <article>
-                <h2>Start Your Experience</h2>
-                <p>Join us on stunning rivers where every rapid adds a new chapter to your adventure.</p>
-                <a id="trip-button" href="trips.html">See Our Adventures</a>
+                <h2>Welcome to the Córdoba City Chamber of Commerce</h2>
+
+                <p>
+                    Discover local businesses, connect with entrepreneurs, and
+                    explore opportunities that strengthen our community.
+                    Together, we support business development and economic growth
+                    across Córdoba.
+                </p>
+
+                <a id="join-button" href="join.html">Become a Member</a>
             </article>
         </div>
 
-        <section class="newsletter">
-            <h2>Stay ahead of the current</h2>
-            <p><strong>Get the latest deals, tips, and river news straight to your inbox!</strong></p>
-            <form>
+        <section class="events">
+            <h2>Upcoming Events</h2>
 
-                <label for="q1" id="l1"><strong>Name</strong></label>
-                <input type="text" name="q1" id="q1" placeholder="John Connor">
+            <p>
+                Stay connected with Córdoba's business community.
+                Participate in events designed to encourage networking,
+                professional development, and new business opportunities.
+            </p>
 
+            <article>
+                <h3>Business Networking</h3>
+                <p>
+                    Meet local entrepreneurs and business owners,
+                    exchange ideas, and build valuable professional connections.
+                </p>
+            </article>
 
-                <label for="q2" id="l2"><strong>Email</strong></label>
-                <input type="email" name="q2" id="q2" placeholder="turn-off-skynet@resistance.com">
+            <article>
+                <h3>Business Development Workshops</h3>
+                <p>
+                    Explore practical resources and strategies to improve
+                    business management, innovation, and growth.
+                </p>
+            </article>
 
+            <article>
+                <h3>Community Business Events</h3>
+                <p>
+                    Discover opportunities to engage with local businesses
+                    and participate in initiatives that support Córdoba's economy.
+                </p>
+            </article>
+        </section>
 
-                <button type="submit">Subscribe!</button>
+        <section class="weather">
+            <h2>Córdoba Weather</h2>
 
-            </form>
+            <p>
+                Check the latest weather conditions in Córdoba, Argentina,
+                and stay informed about the local forecast.
+            </p>
 
+            <div id="weather-info">
+                <!-- Here I am populating with the weather info -->
+            </div>
+        </section>
+
+        <section class="spotlights">
+            <h2>Local Business Spotlights</h2>
+
+            <p>
+                Get to know some of the businesses that contribute to
+                Córdoba's economy and make our local community stronger.
+            </p>
+
+            <div id="spotlight-container">
+                <!-- Here I am populating with random companies form the JSON -->
+            </div>
 
         </section>
 
-        <section class="family">
-            <h2>Adventure for the whole family!</h2>
-            <figure>
-                <img src="images/family1.jpg" alt="Devil’s Teeth Rapids – Río Colorado">
-                <figcaption><strong>Safe for All Ages</strong><br><br>Our expert guides ensure every trip is controlled,
-                    safe, comfortable, and thoughtfully designed for families with
-                    children of all ages.</figcaption>
-            </figure>
-            <figure>
-                <img src="images/family2.jpg" alt="Big Mallard Run – Río Ñireco">
-                <figcaption><strong>Memorable Shared Moments</strong><br><br>Rafting helps families bond through
-                    exciting
-                    experiences, creating lasting memories on every river journey.</figcaption>
-            </figure>
-            <figure>
-                <img src="images/family3.jpg" alt="Half-Day Adventure – Río Limay">
-                <figcaption><strong>Fun Without Complexity</strong><br><br>We provide clear instructions, easy routes,
-                    and
-                    supportive guidance so families enjoy adventure without stress.</figcaption>
-            </figure>
-        </section>
     </main>
 
     <footer>
 
         <div>
-            <p><strong>Cordoba's Chamber of Commerce</strong></p>
+            <p><strong>Córdoba Chamber of Commerce</strong></p>
             <p>Gral. Paz 79</p>
             <p>X5000 Córdoba, Argentina</p>
             <p>info@cordobacoc.com</p>
@@ -121,7 +151,7 @@
         <div>
             <p>WDD231 Chamber Project</p>
             <p>Ismael Marin</p>
-            <p>&copy;<span id="currentyear"></span> Cordoba's Chamber of Commerce</p>
+            <p>&copy;<span id="currentyear"></span> Córdoba Chamber of Commerce</p>
             <p>Last Modification: <span id="lastModified"></span></p>
         </div>
 

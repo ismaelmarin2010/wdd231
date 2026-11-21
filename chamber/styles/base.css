@@ -1,7 +1,19 @@
 /* SITE SETTINGS START */
 * {
-    font-family: "Josefin Sans", sans-serif;
     box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
 }
 
 /* Main Variables from Rafting Site*/
@@ -27,6 +39,7 @@
 /* HEADER START */
 header {
     display: grid;
+    width: 100%;
     grid-template-columns: 35px auto 44px;
     align-items: end;
     border-bottom: solid 1px #ddd;
@@ -125,40 +138,44 @@ main {
     /* adjust to match your header's real height */
 }
 
-/* Variables from Rafting Site */
+/* Chamber of Commerce Homepage */
 
 .index {
     position: relative;
 }
 
+.index img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .index h1 {
     position: absolute;
-    text-align: center;
     top: 10px;
-    padding: 10px 0 10px 0;
-    background-color: rgba(0, 0, 0, 0.18);
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
     color: var(--accent2-color);
-    width: 840px;
 }
 
 .index article {
-    position: absolute;
-    text-align: center;
-    color: var(--border-color);
+    position: relative;
+    width: 100%;
+    padding: 15px;
     margin: 0;
-    top: 125px;
-    left: 480px;
-    /* left: 20px; */
-    padding: 10px 0 10px 0;
+    text-align: center;
     background-color: rgba(242, 210, 60, 0.7);
-    width: 200px;
-    /* height: 180px; */
 }
 
 
 .index h2,
 .index p {
-    padding: 0 10px 20px 10px;
+    padding: 0 10px 0 10px;
 }
 
 
@@ -168,70 +185,100 @@ main {
     height: auto;
 }
 
-.newsletter {
-    margin: 50px 0 0 0;
-    /* display: grid;
-    grid-template-columns: 1fr 0.8fr 1fr;
-    grid-template-rows: 50px 320px; */
-    justify-content: center;
-    background-color: rgba(30, 79, 138, 0.3);
-    padding: 20px;
+.events article {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.newsletter h2,
-.newsletter p,
-.get-in-contact h2,
-.get-in-contact p {
+.events h3 {
+    text-align: center;
+}
+
+.events h2,
+.events p {
     /* grid-column: 1/4; */
     text-align: center;
     padding: 5px;
 }
 
-.newsletter form {
-    padding: 15px 10px 10px 10px;
-}
 
-
-.family {
+.spotlights {
     margin: 50px 0 0 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    justify-items: center;
     padding: 0;
 }
 
-.family h2 {
-    grid-column: 1/4;
-    justify-self: center;
+.spotlights h2 {
+    text-align: center;
 }
 
-.family img {
-    width: 100%;
-    margin: 0 10px 0 10px;
-    height: auto;
-    border: 1px solid var(--border-color);
-    padding: 2px;
-    box-shadow: 0 0 30px var(--border-shadow-color);
+.spotlights>p {
+    text-align: center;
+    padding: 5px;
 }
 
+#spotlight-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px 0 10px 0;
+}
 
-.family figure {
+#spotlight-container article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.family figcaption {
-    padding-top: 20px;
-}
-
-#trip-button {
+#join-button {
     display: inline-block;
+    width: 180px;
+    padding: 12px;
+    margin: 10px auto;
+    background-color: var(--primary-color);
+    color: white;
     text-decoration: none;
-    width: 150px;
-    justify-self: center;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#join-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--border-color);
+}
+
+/* WEATHER SECTION */
+.weather {
+    margin: 50px 0 0 0;
+    background-color: rgba(30, 79, 138, 0.2);
+    padding: 20px;
+}
+
+#weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.weather h2,
+.weather p {
+    text-align: center;
+    padding: 5px;
 }
 
 .trip {
@@ -483,3 +530,14 @@ footer p {
 }
 
 /* FOOTER END */
+
+
+
+/* The comment below is used to
+   disable specific styling */
+/*
+span {
+  color: blue;
+  font-size: 1.5em;
+}
+*/
