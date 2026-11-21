@@ -250,7 +250,7 @@ function displaySpotlights(companies) {
         portrait.setAttribute("src", company.img);
         portrait.setAttribute("alt", `Logo of ${company.businessName}`);
         portrait.setAttribute("loading", "lazy");
-        portrait.setAttribute("width", "130");
+        portrait.setAttribute("width", "150");
         portrait.setAttribute("height", "auto");
 
         phone.textContent = `PHONE: ${company.phone}`;

@@ -169,7 +169,7 @@ main {
     padding: 15px;
     margin: 0;
     text-align: center;
-    background-color: rgba(242, 210, 60, 0.7);
+    background-color: rgba(224, 122, 95, 0.87);
 }
 
 
@@ -243,7 +243,7 @@ main {
     width: 180px;
     padding: 12px;
     margin: 10px auto;
-    background-color: var(--primary-color);
+    background-color: #3D405B;
     color: white;
     text-decoration: none;
     text-align: center;
