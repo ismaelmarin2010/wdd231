@@ -1,4 +1,30 @@
-/* SITE SETTINGS START */
+/* =====================================
+   SITE SETTINGS
+===================================== */
+
+:root {
+    /* Main Colors */
+    --primary-color: #3D405B;
+    --secondary-color: #E07A5F;
+
+    /* Neutral Colors */
+    --white-color: #FFFFFF;
+    --light-gray: #F2F2F2;
+    --medium-gray: #DDDDDD;
+    --dark-gray: #999999;
+    --text-gray: #666666;
+    --black-color: #000000;
+
+    /* Transparent Colors */
+    --primary-transparent: rgba(61, 64, 91, 0.12);
+    --secondary-transparent: rgba(224, 122, 95, 0.87);
+    --overlay-color: rgba(0, 0, 0, 0.5);
+
+    /* Fonts */
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -16,37 +42,21 @@ h6 {
     font-family: var(--heading-font);
 }
 
-/* Main Variables from Rafting Site*/
-:root {
-    --primary-color: rgba(30, 79, 138, 1);
-    /* Blue for background */
-    --secondary-color: rgba(242, 210, 60);
-    /* Yellow as the safety helmet */
-    --accent1-color: rgba(75, 110, 60, 1);
-    /* Forrest green for ...?*/
-    --accent2-color: rgba(255, 252, 242, 1);
-    /* For text over dark background */
-    --border-color: rgba(0, 0, 0, 1);
-    /* Black for border and some text */
-    --border-shadow-color: rgba(128, 128, 128, 1);
-    /* Gray for shadow */
-    --heading-font: 'Montserrat', sans-serif;
-    --body-font: 'Roboto', sans-serif;
-}
 
-/* SITE SETTINGS END */
+/* =====================================
+   HEADER
+===================================== */
 
-/* HEADER START */
 header {
     display: grid;
     width: 100%;
     grid-template-columns: 35px auto 44px;
     align-items: end;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px var(--medium-gray);
     column-gap: 8px;
-    background-color: white;
+    background-color: var(--white-color);
 
-    /* Make header stick to the top of the page */
+    /* Make header stick to the top */
     position: fixed;
     top: 0;
     left: 0;
@@ -65,15 +75,17 @@ header img {
 header span {
     font-size: 1rem;
     text-align: center;
-    color: #3D405B;
+    color: var(--primary-color);
     padding: .8rem 10px;
 }
 
+
 /* HAMBURGER */
+
 .hamburger-class {
     background: none;
     border: none;
-    color: #3D405B;
+    color: var(--primary-color);
     cursor: pointer;
     font-size: 1.2rem;
     font-family: Verdana, Tahoma, sans-serif;
@@ -88,7 +100,9 @@ header span {
     content: "\00D7";
 }
 
+
 /* NAVIGATION */
+
 .navigation {
     display: none;
 }
@@ -106,39 +120,43 @@ header span {
 .navigation a {
     display: block;
     padding: .8rem 10px;
-    color: #3D405B;
+    color: var(--primary-color);
     text-decoration: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px var(--medium-gray);
 }
 
 .navigation li.current {
-    background-color: #eee;
+    background-color: var(--light-gray);
 }
 
 .navigation a:hover {
-    background-color: #E07A5F;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
 }
 
 
-/* HEADER END */
+/* =====================================
+   GENERAL SETTINGS
+===================================== */
 
-
-/* GENERAL SETTINGS */
 h1,
 h2,
 p {
     margin-left: 10px;
-    color: #3D405B;
+    color: var(--primary-color);
 }
 
 
-/* MAIN START */
+/* =====================================
+   MAIN
+===================================== */
+
 main {
     padding-top: 80px;
-    /* adjust to match your header's real height */
 }
 
-/* Chamber of Commerce Homepage */
+
+/* CHAMBER HOMEPAGE */
 
 .index {
     position: relative;
@@ -159,8 +177,8 @@ main {
     margin: 0;
     text-align: center;
     font-size: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: var(--accent2-color);
+    background-color: var(--overlay-color);
+    color: var(--white-color);
 }
 
 .index article {
@@ -169,27 +187,22 @@ main {
     padding: 15px;
     margin: 0;
     text-align: center;
-    background-color: rgba(224, 122, 95, 0.87);
+    background-color: var(--secondary-transparent);
 }
-
 
 .index h2,
 .index p {
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
 }
 
 
-.index img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+/* EVENTS */
 
 .events article {
-    background-color: white;
+    background-color: var(--white-color);
     padding: 15px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid var(--medium-gray);
     border-radius: 5px;
 }
 
@@ -199,11 +212,14 @@ main {
 
 .events h2,
 .events p {
-    /* grid-column: 1/4; */
     text-align: center;
     padding: 5px;
 }
 
+
+/* =====================================
+   BUSINESS SPOTLIGHTS
+===================================== */
 
 .spotlights {
     margin: 50px 0 0 0;
@@ -223,7 +239,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
 }
 
 #spotlight-container article {
@@ -233,18 +249,28 @@ main {
     align-items: center;
     text-align: center;
     padding: 15px;
-    background-color: #eee;
-    border: 1px solid #ddd;
+    background-color: var(--light-gray);
+    border: 1px solid var(--medium-gray);
     border-radius: 5px;
 }
+
+#spotlight-container article img {
+    width: 130px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+/* JOIN BUTTON */
 
 #join-button {
     display: inline-block;
     width: 180px;
     padding: 12px;
     margin: 10px auto;
-    background-color: #3D405B;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     text-decoration: none;
     text-align: center;
     border-radius: 5px;
@@ -252,38 +278,107 @@ main {
 }
 
 #join-button:hover {
-    background-color: var(--secondary-color);
-    color: var(--border-color);
+    background-color: var(--white-color);
+    color: var(--secondary-color);
 }
 
-/* WEATHER SECTION */
+
+/* =====================================
+   WEATHER SECTION
+===================================== */
+
 .weather {
     margin: 50px 0 0 0;
-    background-color: rgba(30, 79, 138, 0.2);
+    background-color: var(--primary-transparent);
     padding: 20px;
 }
 
+/* WEATHER GRID */
 #weather-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     padding: 15px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    min-height: 100px;
 }
 
-.weather h2,
-.weather p {
+/* CURRENT WEATHER */
+#current-weather {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
-    padding: 5px;
 }
+
+#current-weather img {
+    width: 110px;
+    height: auto;
+}
+
+.weather-details h3 {
+    color: var(--primary-color);
+}
+
+.current-temperature {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+/* FORECAST TITLE */
+#forecast-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+/* FORECAST CONTAINER */
+#forecast-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* FORECAST CARDS */
+.forecast-card {
+    background-color: var(--white-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.forecast-card img {
+    width: 80px;
+    height: auto;
+}
+
+.forecast-card h4 {
+    color: var(--primary-color);
+}
+
+.forecast-card p:first-of-type {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.forecast-card p:last-child {
+    color: var(--text-gray);
+    text-transform: capitalize;
+}
+
+/* TRIP SECTION
 
 .trip {
     margin: 50px 0 0 0;
-    background-color: rgba(30, 79, 138, 0.2);
+    background-color: var(--primary-transparent);
     padding: 20px 20px 30px 20px;
 }
 
@@ -301,34 +396,33 @@ main {
 .trip img {
     width: 180px;
     height: auto;
-    border: 1px solid black;
+    border: 1px solid var(--black-color);
     padding: 2px;
-    box-shadow: 0 0 30px gray;
+    box-shadow: 0 0 30px var(--dark-gray);
     float: right;
-    margin: 0.0 0 0 1rem;
+    margin: 0 0 0 1rem;
 }
 
 #trip-img {
     width: 180px;
     height: auto;
-    border: 1px solid black;
+    border: 1px solid var(--black-color);
     padding: 2px;
-    box-shadow: 0 0 30px gray;
+    box-shadow: 0 0 30px var(--dark-gray);
     float: left;
-    margin: 0.5rem 1.1rem 0 0;
+    margin: .5rem 1.1rem 0 0;
 }
+ */
 
+/* CALL TO ACTION */
 
 .call-to-action {
     display: block;
     margin: 20px 0 0 0;
     text-align: left;
-    color: var(--border-color);
-    /* top: 125px;
-    left: 480px; */
+    color: var(--primary-color);
     padding: 20px;
-    background-color: rgba(242, 210, 60, 0.7);
-    /* width: 200px; */
+    background-color: var(--secondary-transparent);
 }
 
 .call-to-action h2,
@@ -342,11 +436,10 @@ main {
 
 #adventure {
     background-color: var(--primary-color);
-    color: var(--accent2-color);
+    color: var(--white-color);
     text-transform: uppercase;
     margin: 10px;
     padding: 10px;
-    /* border-radius: 5px; */
     display: block;
     text-decoration: none;
     width: 400px;
@@ -356,22 +449,26 @@ main {
 
 #adventure:hover {
     background-color: var(--secondary-color);
-    color: var(--accent1-color);
+    color: var(--white-color);
     cursor: pointer;
 }
+
+
+/* CONTACT */
 
 .get-in-contact {
     width: 100%;
     margin: 50px 0 0 0;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary-color);
     justify-content: center;
     padding: 20px;
 }
 
 
-/* -------------------------- */
+/* =====================================
+   COURSE BUTTONS
+===================================== */
 
-/* BUTTONS */
 .course-buttons {
     display: flex;
     justify-content: center;
@@ -382,19 +479,23 @@ main {
 .course-buttons button {
     display: block;
     padding: .8rem 10px;
-    color: #3D405B;
+    color: var(--primary-color);
     text-decoration: none;
-    border: none;
-    border: solid 1px #ddd;
+    border: solid 1px var(--medium-gray);
     background-color: transparent;
     cursor: pointer;
 }
 
 .course-buttons button:hover {
-    background-color: #E07A5F;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
 }
 
-/* CARDS AS A GRID */
+
+/* =====================================
+   DIRECTORY CARDS - GRID VIEW
+===================================== */
+
 #cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -406,9 +507,9 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    background-color: #eee;
-    border: 1px solid #3D405B;
-    color: #3D405B;
+    background-color: var(--light-gray);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     border-radius: 5%;
     overflow: hidden;
 }
@@ -417,9 +518,8 @@ main {
     width: 100%;
     height: 150px;
     object-fit: contain;
-    background-color: white;
+    background-color: var(--white-color);
     padding: 10px;
-    box-sizing: border-box;
 }
 
 #cards section h2 {
@@ -432,22 +532,26 @@ main {
     margin: 0;
     text-align: center;
     padding-bottom: 8px;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid var(--dark-gray);
     width: 100%;
-    font-size: 0.85rem;
+    font-size: .85rem;
 }
 
 #cards section .email,
 #cards section .phone,
 #cards section .url {
     padding-left: 30px;
-    font-size: 0.75rem;
+    font-size: .75rem;
     text-align: left;
     width: 100%;
-    margin: 2px 0 2px 0;
+    margin: 2px 0;
 }
 
-/* CARDS AS A LIST */
+
+/* =====================================
+   DIRECTORY CARDS - LIST VIEW
+===================================== */
+
 #cards.list {
     display: flex;
     flex-direction: column;
@@ -472,7 +576,7 @@ main {
 
 #cards.list section .tagline {
     text-align: left;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid var(--dark-gray);
     padding-bottom: 5px;
 }
 
@@ -482,20 +586,20 @@ main {
     text-align: left;
     padding-left: 0;
     margin: 5px 0;
-    font-size: 0.85rem;
+    font-size: .85rem;
 }
 
-/* MAIN END */
 
-
-/* FOOTER START */
+/* =====================================
+   FOOTER
+===================================== */
 
 footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    background-color: #eee;
+    background-color: var(--light-gray);
     gap: 15px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     text-align: left;
 }
 
@@ -516,7 +620,7 @@ footer p {
     align-items: center;
     width: 44px;
     height: 44px;
-    border: #ccc solid 1px;
+    border: var(--medium-gray) solid 1px;
     border-radius: 22px;
 }
 
@@ -526,18 +630,10 @@ footer p {
 }
 
 .social a:hover {
-    background-color: #ddd;
+    background-color: var(--medium-gray);
 }
 
-/* FOOTER END */
 
-
-
-/* The comment below is used to
-   disable specific styling */
-/*
-span {
-  color: blue;
-  font-size: 1.5em;
-}
-*/
+/* =====================================
+   END OF BASE CSS
+===================================== */

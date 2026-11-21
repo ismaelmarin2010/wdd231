@@ -8,6 +8,9 @@
         margin: 0 auto;
     }
 
+
+    /* HEADER */
+
     header {
         width: 100%;
         grid-template-columns: 50px 1fr auto;
@@ -22,9 +25,12 @@
 
     header span {
         font-size: 1.06rem;
-        color: #3D405B;
+        color: var(--primary-color);
         padding: .8rem 10px;
     }
+
+
+    /* NAVIGATION */
 
     .hamburger-class {
         display: none;
@@ -32,7 +38,6 @@
 
     .navigation {
         display: block;
-        /* border-bottom: solid 1px #eee; */
     }
 
     .navigation ul {
@@ -43,13 +48,22 @@
         border: none;
     }
 
+
+    /* FOOTER */
+
     .social {
         justify-content: center;
     }
 
+
+    /* BUSINESS SPOTLIGHTS */
+
     #spotlight-container {
         grid-template-columns: repeat(3, 1fr);
     }
+
+
+    /* HOMEPAGE HERO */
 
     .index h1 {
         font-size: 2rem;
@@ -63,6 +77,9 @@
         width: 350px;
         margin: 0;
     }
+
+
+    /* EVENTS */
 
     .events {
         display: grid;
@@ -79,13 +96,11 @@
         margin: 0;
     }
 
+
+    /* WEATHER */
+
     .weather {
         margin-top: 30px;
     }
-
-    #spotlight-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
 
 }

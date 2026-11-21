@@ -39,20 +39,39 @@ function displayWeather(data) {
 
     // Create elements in the HTML file
     const currentWeather = document.createElement("div");
+    const weatherIcon = document.createElement("img");
+    const weatherDetails = document.createElement("div");
+    const weatherTitle = document.createElement("h3");
     const temperature = document.createElement("p");
     const description = document.createElement("p");
 
     // Need to add classes to the tags for better CSS...
-    currentWeather.classList.add("current-weather");
+    currentWeather.id = "current-weather";
+    weatherIcon.classList.add("weather-icon");
+    weatherDetails.classList.add("weather-details");
+    temperature.classList.add("current-temperature");
+
+    // Collect the icon
+    const iconCode = data.weather[0].icon;
+    weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    weatherIcon.alt = data.weather[0].description;
+    weatherIcon.width = 100;
+    weatherIcon.height = 100;
 
     // Populate the HTML with the weather info
-    temperature.textContent = `Temperature: ${data.main.temp.toFixed(1)}°C`;
-    description.textContent = `Conditions: ${data.weather[0].description}`;
+    weatherTitle.textContent = "Current Weather";
+    temperature.textContent = `${data.main.temp.toFixed(1)}°C`;
+    description.textContent = data.weather[0].description;
 
     // Build the weather section
-    currentWeather.appendChild(temperature);
-    currentWeather.appendChild(description);
+    weatherDetails.appendChild(weatherTitle);
+    weatherDetails.appendChild(temperature);
+    weatherDetails.appendChild(description);
+    currentWeather.appendChild(weatherIcon);
+    currentWeather.appendChild(weatherDetails);
+
     weatherInfo.appendChild(currentWeather);
+
 }
 
 
@@ -83,12 +102,9 @@ function displayForecast(data) {
     const forecastTitle = document.createElement("h3");
 
     // Populate the HTML with the forecast info
-    forecastContainer.classList.add("forecast-container");
-    forecastTitle.textContent = "Three-Day Forecast";
+    forecastContainer.id = "forecast-container";
 
-    forecastContainer.appendChild(forecastTitle);
-
-    // Get Cordoba's local time using the API timezone
+    // Review my local time using the API timezone
     const today = new Date();
 
     const localToday = new Date(
@@ -97,43 +113,60 @@ function displayForecast(data) {
 
     const todayDate = localToday.toISOString().split("T")[0];
 
-    // Store the forecast for each day
+    // Save an array with the forecast
     const dailyForecast = [];
 
     data.list.forEach((forecast) => {
 
-        // Convert forecast timestamp to my local date and time
         const forecastDate = new Date(
             (forecast.dt + data.city.timezone) * 1000
         );
 
         const date = forecastDate.toISOString().split("T")[0];
-
         const hour = forecastDate.getUTCHours();
 
-        // Skip today and select forecasts close to noon
-        if (date > todayDate && hour === 12) {
+        // Skip forecast for today.
+        if (date > todayDate) {
 
-            if (dailyForecast.length < 3) {
-                dailyForecast.push(forecast);
+            // Verify if the forecast exists
+            const existingForecast = dailyForecast.find(
+                (day) => day.date === date
+            );
+
+            // Select the forecast close to noon
+            if (!existingForecast) {
+                dailyForecast.push({
+                    date: date,
+                    hour: hour,
+                    forecast: forecast
+                });
+            } else if (Math.abs(hour - 12) < Math.abs(existingForecast.hour - 12)) {
+                existingForecast.hour = hour;
+                existingForecast.forecast = forecast;
             }
         }
     });
 
-    // Create a card for each forecast day
-    dailyForecast.forEach((forecast) => {
+    // Display only the next three days...
+    dailyForecast.sort((a, b) => a.date.localeCompare(b.date));
 
-        const forecastCard = document.createElement("div");
+    const selectedDays = dailyForecast.slice(0, 3);
+
+    // Create a card for each forecast day
+    selectedDays.forEach((day) => {
+
+        const forecast = day.forecast;
+
+        const forecastCard = document.createElement("article");
         const forecastDate = document.createElement("h4");
+        const weatherIcon = document.createElement("img");
         const forecastTemp = document.createElement("p");
         const forecastDescription = document.createElement("p");
 
         forecastCard.classList.add("forecast-card");
 
         // Format the forecast date
-        const date = new Date(
-            (forecast.dt + data.city.timezone) * 1000
-        );
+        const date = new Date(`${day.date}T12:00:00Z`);
 
         forecastDate.textContent = date.toLocaleDateString("en-US", {
             weekday: "long",
@@ -142,153 +175,33 @@ function displayForecast(data) {
             timeZone: "UTC"
         });
 
-        forecastTemp.textContent =
-            `Temperature: ${forecast.main.temp.toFixed(1)}°C`;
+        // Get the forecast icon
+        const iconCode = forecast.weather[0].icon;
 
-        forecastDescription.textContent =
-            forecast.weather[0].description;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        weatherIcon.alt = forecast.weather[0].description;
+        weatherIcon.width = 80;
+        weatherIcon.height = 80;
+        weatherIcon.loading = "lazy";
 
+        // Populate the forecast information.
+        forecastTemp.textContent = `${forecast.main.temp.toFixed(1)}°C`;
+        forecastDescription.textContent = forecast.weather[0].description;
+
+        // Build the forecast card
         forecastCard.appendChild(forecastDate);
+        forecastCard.appendChild(weatherIcon);
         forecastCard.appendChild(forecastTemp);
         forecastCard.appendChild(forecastDescription);
 
         forecastContainer.appendChild(forecastCard);
     });
 
+    // Add the forecast to the weather section
     weatherInfo.appendChild(forecastContainer);
 }
 
 
-// Call weather functions
+// Call the functions
 getWeather();
 getForecast();
-
-
-// BUSINESS SPOTLIGHTS
-const companiesURL = "./scripts/cordoba-businesses.json";
-
-// Select the HTML element
-const spotlightContainer = document.querySelector("#spotlight-container");
-
-
-// Select the company members for spotlights
-async function getSpotlights() {
-    try {
-        const response = await fetch(companiesURL);
-
-        if (response.ok) {
-            const data = await response.json();
-
-            console.log(data);
-
-            // Select only Gold and Silver members
-            const qualifiedCompanies = data.companies.filter(
-                (company) =>
-                    company.membershipLevel === "gold" ||
-                    company.membershipLevel === "silver"
-            );
-
-            // Create a copy of the qualified companies
-            const availableCompanies = [...qualifiedCompanies];
-
-            // Select two or three random companies
-            const numberOfSpotlights = Math.min(
-                3,
-                availableCompanies.length
-            );
-
-            const selectedCompanies = [];
-
-            while (selectedCompanies.length < numberOfSpotlights) {
-
-                const randomIndex = Math.floor(
-                    Math.random() * availableCompanies.length
-                );
-
-                // Add the selected company
-                selectedCompanies.push(
-                    availableCompanies[randomIndex]
-                );
-
-                // Remove the selected company to avoid duplicates
-                availableCompanies.splice(randomIndex, 1);
-            }
-
-            displaySpotlights(selectedCompanies);
-
-        } else {
-            throw new Error(await response.text());
-        }
-
-    } catch (error) {
-        console.error("Spotlight error:", error);
-    }
-}
-
-
-// Display tje spotlight cards
-function displaySpotlights(companies) {
-
-    spotlightContainer.innerHTML = "";
-
-    companies.forEach((company) => {
-
-        // Create the spotlight card...
-        const card = document.createElement("article");
-        card.classList.add("spotlight-card");
-
-        // Create company elements///
-        const companyName = document.createElement("h3");
-        const portrait = document.createElement("img");
-        const phone = document.createElement("p");
-        const address = document.createElement("p");
-        const website = document.createElement("p");
-        const membership = document.createElement("p");
-
-        // Poppulate the company information
-        companyName.textContent = company.businessName;
-        portrait.setAttribute("src", company.img);
-        portrait.setAttribute("alt", `Logo of ${company.businessName}`);
-        portrait.setAttribute("loading", "lazy");
-        portrait.setAttribute("width", "150");
-        portrait.setAttribute("height", "auto");
-
-        phone.textContent = `PHONE: ${company.phone}`;
-        address.textContent = `ADDRESS: ${company.address}`;
-
-        // Create website link
-        const websiteLink = document.createElement("a");
-        websiteLink.setAttribute("href", `https://${company.url}`);
-        websiteLink.setAttribute("target", "_blank");
-        websiteLink.setAttribute("rel", "noopener noreferrer");
-        websiteLink.textContent = company.url;
-
-        website.textContent = "WEBSITE: ";
-        website.appendChild(websiteLink);
-
-        // Display membership level
-        const membershipLevel =
-            company.membershipLevel.charAt(0).toUpperCase() +
-            company.membershipLevel.slice(1);
-
-        membership.textContent = `MEMBERSHIP: ${membershipLevel}`;
-
-        // Add membership class for CSS
-        card.classList.add(company.membershipLevel);
-
-        // Append elements to the card
-        card.appendChild(companyName);
-        card.appendChild(portrait);
-        card.appendChild(phone);
-        card.appendChild(address);
-        card.appendChild(website);
-        card.appendChild(membership);
-
-        // Append card to spotlight container
-        spotlightContainer.appendChild(card);
-    });
-}
-
-
-// Call the spotlight function
-getSpotlights();
