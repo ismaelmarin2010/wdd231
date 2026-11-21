@@ -205,3 +205,133 @@ function displayForecast(data) {
 // Call the functions
 getWeather();
 getForecast();
+
+
+// BUSINESS SPOTLIGHTS
+const companiesURL = "./scripts/cordoba-businesses.json";
+
+// Select the HTML element
+const spotlightContainer = document.querySelector("#spotlight-container");
+
+
+// Select the company members for spotlights
+async function getSpotlights() {
+    try {
+        const response = await fetch(companiesURL);
+
+        if (response.ok) {
+            const data = await response.json();
+
+            console.log(data);
+
+            // Select only Gold and Silver members
+            const qualifiedCompanies = data.companies.filter(
+                (company) =>
+                    company.membershipLevel === "gold" ||
+                    company.membershipLevel === "silver"
+            );
+
+            // Create a copy of the qualified companies
+            const availableCompanies = [...qualifiedCompanies];
+
+            // Select two or three random companies
+            const numberOfSpotlights = Math.min(
+                3,
+                availableCompanies.length
+            );
+
+            const selectedCompanies = [];
+
+            while (selectedCompanies.length < numberOfSpotlights) {
+
+                const randomIndex = Math.floor(
+                    Math.random() * availableCompanies.length
+                );
+
+                // Add the selected company
+                selectedCompanies.push(
+                    availableCompanies[randomIndex]
+                );
+
+                // Remove the selected company to avoid duplicates
+                availableCompanies.splice(randomIndex, 1);
+            }
+
+            displaySpotlights(selectedCompanies);
+
+        } else {
+            throw new Error(await response.text());
+        }
+
+    } catch (error) {
+        console.error("Spotlight error:", error);
+    }
+}
+
+
+// Display tje spotlight cards
+function displaySpotlights(companies) {
+
+    spotlightContainer.innerHTML = "";
+
+    companies.forEach((company) => {
+
+        // Create the spotlight card...
+        const card = document.createElement("article");
+        card.classList.add("spotlight-card");
+
+        // Create company elements///
+        const companyName = document.createElement("h3");
+        const portrait = document.createElement("img");
+        const phone = document.createElement("p");
+        const address = document.createElement("p");
+        const website = document.createElement("p");
+        const membership = document.createElement("p");
+
+        // Poppulate the company information
+        companyName.textContent = company.businessName;
+        portrait.setAttribute("src", company.img);
+        portrait.setAttribute("alt", `Logo of ${company.businessName}`);
+        portrait.setAttribute("loading", "lazy");
+        portrait.setAttribute("width", "150");
+        portrait.setAttribute("height", "auto");
+
+        phone.textContent = `PHONE: ${company.phone}`;
+        address.textContent = `ADDRESS: ${company.address}`;
+
+        // Create website link
+        const websiteLink = document.createElement("a");
+        websiteLink.setAttribute("href", `https://${company.url}`);
+        websiteLink.setAttribute("target", "_blank");
+        websiteLink.setAttribute("rel", "noopener noreferrer");
+        websiteLink.textContent = company.url;
+
+        website.textContent = "WEBSITE: ";
+        website.appendChild(websiteLink);
+
+        // Display membership level
+        const membershipLevel =
+            company.membershipLevel.charAt(0).toUpperCase() +
+            company.membershipLevel.slice(1);
+
+        membership.textContent = `MEMBERSHIP: ${membershipLevel}`;
+
+        // Add membership class for CSS
+        card.classList.add(company.membershipLevel);
+
+        // Append elements to the card
+        card.appendChild(companyName);
+        card.appendChild(portrait);
+        card.appendChild(phone);
+        card.appendChild(address);
+        card.appendChild(website);
+        card.appendChild(membership);
+
+        // Append card to spotlight container
+        spotlightContainer.appendChild(card);
+    });
+}
+
+
+// Call the spotlight function
+getSpotlights();
